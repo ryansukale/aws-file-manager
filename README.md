@@ -1,26 +1,33 @@
 # AWS File Manager
 
-A comprehensive TypeScript library for managing files in AWS S3, with Express integration.
+A TypeScript library for managing files in AWS S3.
 
 ## Features
 
-- Upload single or multiple files to S3
-- Delete files individually or in batch
-- Find and list files with pagination
-- Generate signed URLs for private files
-- Download files
-- Express middleware for easy integration
+- Upload and download files from S3
 - Fully typed with TypeScript
 
 ## Installation
 
 ```bash
-npm install aws-file-manager
+npm install @allegria/aws-file-manager
 ```
 
-// Download multiple files
-const result = await fileManager.downloadAll(['path/to/file1.jpg', 'path/to/file2.jpg']);
+## Examples
 
-// Handle multiple file downloads (as ZIP)
-app.post('/download-multiple', middleware.handleDownloadAll());
+#### Basic usage
 
+```js
+const fileManager = new AwsFileManager({
+  region: AWS_REGION,
+  bucketName: AWS_BUCKET_NAME,
+  accessKeyId: AWS_ACCESS_KEY,
+  secretAccessKey: AWS_SECRET_ACCESS_KEY,
+});
+
+// To upload
+const uploadResult = await fileManager.upload('my-photo.jpg');
+
+// To download
+const downloadResult = await fileManager.download('my-photo.jpg', 'buffer');
+```
