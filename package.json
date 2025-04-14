@@ -4,16 +4,21 @@
   "description": "TypeScript library for managing files in AWS S3",
   "main": "dist/lib/aws-file-manager.js",
   "types": "dist/lib/aws-file-manager.d.ts",
+  "files": ["dist"],
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsc",
     "start": "pnpm run build",
-    "prepare": "pnpm run build"
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": ["aws", "s3", "file-upload", "file-manager", "typescript"],
   "author": "",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.445.0",
     "@aws-sdk/s3-request-presigner": "^3.445.0",
