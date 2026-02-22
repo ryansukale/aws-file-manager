@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] — 2026-02-22
+
+### Fixed
+
+- Fixed build configuration to exclude examples from TypeScript compilation
+- Updated example imports to use internal path alias (`@lib/aws-file-manager`)
+
 ## [1.0.0] — 2026-02-22
 
 ### Fixed
