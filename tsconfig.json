@@ -17,6 +17,6 @@
       "@lib/*": ["lib/*"]
     }
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist", "ignore"]
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules", "dist", "ignore", "examples"]
 }
