@@ -159,6 +159,14 @@ interface AwsFileManagerConfig {
 
 **`deleteMany` chunking.** The S3 batch delete API accepts at most 1 000 keys per request. `deleteMany` splits larger arrays into 1 000-key chunks and sends them in parallel automatically.
 
+## Development
+
+```bash
+pnpm test          # run tests once
+pnpm test:watch    # run tests in watch mode
+pnpm build         # compile TypeScript
+```
+
 ## License
 
 MIT
