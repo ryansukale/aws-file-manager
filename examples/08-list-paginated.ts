@@ -10,7 +10,7 @@
  *     bucket and verify byte counts against the database.
  */
 
-import { AwsFileManager, ListEntry } from "@allegria/aws-file-manager";
+import { AwsFileManager, ListEntry } from "@lib/aws-file-manager";
 
 const fileManager = new AwsFileManager({
   region: process.env.AWS_REGION ?? "us-east-1",

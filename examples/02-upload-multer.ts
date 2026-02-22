@@ -15,7 +15,7 @@ import multer from "multer";
 import {
   AwsFileManager,
   fromMulterFile,
-} from "@allegria/aws-file-manager";
+} from "@lib/aws-file-manager";
 
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });

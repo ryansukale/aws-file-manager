@@ -10,7 +10,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { AwsFileManager, fromWebFile } from "@allegria/aws-file-manager";
+import { AwsFileManager, fromWebFile } from "@lib/aws-file-manager";
 
 const fileManager = new AwsFileManager({
   region: process.env.AWS_REGION ?? "us-east-1",

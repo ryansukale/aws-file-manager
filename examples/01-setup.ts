@@ -9,7 +9,7 @@
  *   C) IAM role              — recommended for production (EC2, ECS, Lambda)
  */
 
-import { AwsFileManager } from "@allegria/aws-file-manager";
+import { AwsFileManager } from "@lib/aws-file-manager";
 
 // ─── A) Explicit credentials ──────────────────────────────────────────────────
 // Pass credentials directly. Useful during local development when you have a

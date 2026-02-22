@@ -9,7 +9,7 @@
  *   - Not a replacement for proper error handling — network errors still throw.
  */
 
-import { AwsFileManager } from "@allegria/aws-file-manager";
+import { AwsFileManager } from "@lib/aws-file-manager";
 
 const fileManager = new AwsFileManager({
   region: process.env.AWS_REGION ?? "us-east-1",

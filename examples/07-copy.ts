@@ -10,7 +10,7 @@
  *     inherit the source object's metadata (MetadataDirective=COPY).
  */
 
-import { AwsFileManager } from "@allegria/aws-file-manager";
+import { AwsFileManager } from "@lib/aws-file-manager";
 import { randomUUID } from "crypto";
 
 const fileManager = new AwsFileManager({
