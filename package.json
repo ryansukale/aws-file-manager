@@ -4,17 +4,31 @@
   "description": "TypeScript library for managing files in AWS S3",
   "main": "dist/lib/aws-file-manager.js",
   "types": "dist/lib/aws-file-manager.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "examples"
+  ],
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsc",
     "start": "pnpm run build",
     "prepare": "pnpm run build",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
-  "keywords": ["aws", "s3", "file-upload", "file-manager", "typescript"],
-  "author": "",
+  "keywords": [
+    "aws",
+    "s3",
+    "file-upload",
+    "file-manager"
+  ],
+  "author": "Ryan Sukale <ryansukale@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryansukale/aws-file-manager.git"
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -32,7 +46,7 @@
     "@types/multer": "^1.4.10",
     "@types/node": "^20.9.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "^4.0.18"
   }
 }
-
