@@ -2,8 +2,16 @@
   "name": "@allegria/aws-file-manager",
   "version": "1.0.1",
   "description": "TypeScript library for managing files in AWS S3",
-  "main": "dist/lib/aws-file-manager.js",
+  "main": "dist/cjs/aws-file-manager.js",
+  "module": "dist/lib/aws-file-manager.js",
   "types": "dist/lib/aws-file-manager.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib/aws-file-manager.js",
+      "require": "./dist/cjs/aws-file-manager.js",
+      "types": "./dist/lib/aws-file-manager.d.ts"
+    }
+  },
   "files": [
     "dist",
     "examples"
@@ -11,7 +19,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "tsc",
+    "build": "tsc && tsc -p tsconfig.cjs.json && node -e \"require('fs').writeFileSync('dist/cjs/package.json', JSON.stringify({type:'commonjs'}, null, 2))\"",
     "start": "pnpm run build",
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm run build",
