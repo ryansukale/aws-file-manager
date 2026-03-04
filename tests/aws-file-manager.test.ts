@@ -96,8 +96,8 @@ describe("fromWebFile", () => {
     expect(result.originalName).toBe("upload.pdf");
     expect(result.mimeType).toBe("application/pdf");
     expect(result.size).toBe(3);
-    expect(Buffer.isBuffer(result.buffer)).toBe(true);
-    expect(result.buffer).toEqual(Buffer.from(bytes));
+    expect(result.buffer).toBeInstanceOf(Uint8Array);
+    expect(result.buffer).toEqual(bytes);
   });
 });
 
