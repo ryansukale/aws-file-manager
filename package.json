@@ -1,6 +1,6 @@
 {
   "name": "@allegria/aws-file-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypeScript library for managing files in AWS S3",
   "main": "dist/cjs/aws-file-manager.js",
   "module": "dist/lib/aws-file-manager.js",
