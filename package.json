@@ -23,7 +23,6 @@
   ],
   "type": "module",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "tsc && tsc -p tsconfig.cjs.json && node -e \"require('fs').writeFileSync('dist/cjs/package.json', JSON.stringify({type:'commonjs'}, null, 2))\"",
     "start": "pnpm run build",
     "prepare": "pnpm run build",
@@ -61,5 +60,9 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "vitest": "^4.0.18"
+  },
+  "volta": {
+    "node": "20.20.0",
+    "pnpm": "9.1.0"
   }
 }
