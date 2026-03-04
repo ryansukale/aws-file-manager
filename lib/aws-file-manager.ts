@@ -48,7 +48,7 @@ export interface AwsFileManagerConfig {
  */
 export interface FileInput {
   /** Raw file bytes */
-  buffer: Buffer;
+  buffer: Uint8Array;
   /** Original filename as provided by the uploader */
   originalName: string;
   /** MIME type, e.g. 'image/jpeg' */
@@ -211,7 +211,7 @@ export function fromMulterFile(multerFile: {
  */
 export async function fromWebFile(webFile: File): Promise<FileInput> {
   return {
-    buffer: Buffer.from(await webFile.arrayBuffer()),
+    buffer: new Uint8Array(await webFile.arrayBuffer()),
     originalName: webFile.name,
     mimeType: webFile.type,
     size: webFile.size,
@@ -250,6 +250,10 @@ export class AwsFileManager {
 
     this.s3 = new S3Client({
       region: config.region,
+      // Disable automatic checksum calculation so presigned PUT URLs don't
+      // include x-amz-checksum-crc32 — browsers can't compute or attach that
+      // header, which causes CORS preflight failures and checksum mismatches.
+      requestChecksumCalculation: "WHEN_REQUIRED",
       ...(config.accessKeyId &&
         config.secretAccessKey && {
           credentials: {
